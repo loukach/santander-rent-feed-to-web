@@ -18,7 +18,7 @@ function App() {
   const [priceRange, setPriceRange] = useState({ min: 0, max: 9999 });
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('price-asc');
-  const [selectedProviders, setSelectedProviders] = useState(new Set());
+  const [selectedProviders, setSelectedProviders] = useState(new Set(['santander']));
 
   const fetchVehicleData = async () => {
     setLoading(true);
