@@ -28,7 +28,7 @@ function App() {
       // Use different URLs for development vs production
       const apiUrl = import.meta.env.DEV
         ? '/api/motorflash/rentingSantanderConsumer/xml.php'
-        : 'https://cors-proxy-loukach.onrender.com/api/motorflash/rentingSantanderConsumer/xml.php';
+        : `https://cors-proxy-loukach.onrender.com/proxy?url=${encodeURIComponent('https://api.motorflash.com/rentingSantanderConsumer/xml.php')}`;
 
       const response = await fetch(apiUrl);
 
