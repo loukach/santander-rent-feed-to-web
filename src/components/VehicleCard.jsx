@@ -39,6 +39,24 @@ const VehicleCard = ({ vehicle }) => {
           )}
         </div>
 
+        {/* Provider Logo */}
+        <div className="absolute top-2 right-2">
+          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-1" style={{width: '50px', height: '50px'}}>
+            <img
+              src="https://ae-renting.es/wp-content/uploads/2020/06/santander.png"
+              alt="Santander"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'flex';
+              }}
+            />
+            <div className="w-full h-full bg-red-600 rounded flex items-center justify-center text-white text-xs font-bold" style={{display: 'none'}}>
+              S
+            </div>
+          </div>
+        </div>
+
         {/* Image Counter */}
         {vehicle.images && vehicle.images.length > 1 && (
           <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
@@ -140,15 +158,81 @@ const VehicleCard = ({ vehicle }) => {
         )}
       </div>
 
-      {/* Expanded Details (if needed) */}
+      {/* Expanded Details - Financing Table */}
       {showDetails && (
         <div className="border-t px-4 py-3 bg-gray-50">
-          <p className="text-xs text-gray-600">
-            Kilometraje: {vehicle.kilometers || 'N/A'} km
-          </p>
-          {vehicle.dealerId && (
+          {vehicle.allRentingOffers && vehicle.allRentingOffers.length > 0 ? (
+            <div>
+              <h4 className="font-semibold text-xs text-gray-800 mb-2">
+                Opciones de financiación (€/mes):
+              </h4>
+              {(() => {
+                // Organize data by duration and km
+                const dataByDuration = {};
+                const kmValues = new Set();
+
+                vehicle.allRentingOffers.forEach(offer => {
+                  const duration = `${offer.months}m`;
+                  const km = parseInt(offer.km);
+
+                  if (!dataByDuration[duration]) {
+                    dataByDuration[duration] = {};
+                  }
+                  dataByDuration[duration][km] = offer.price;
+                  kmValues.add(km);
+                });
+
+                const sortedKm = Array.from(kmValues).sort((a, b) => a - b);
+                const sortedDurations = Object.keys(dataByDuration).sort((a, b) => {
+                  const aNum = parseInt(a.replace('m', ''));
+                  const bNum = parseInt(b.replace('m', ''));
+                  return aNum - bNum;
+                });
+
+                return (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b border-gray-300">
+                          <th className="text-left py-1 px-1 font-medium text-gray-700">km/año</th>
+                          {sortedDurations.map(duration => (
+                            <th key={duration} className="text-center py-1 px-1 font-medium text-gray-700">
+                              {duration}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {sortedKm.map(km => (
+                          <tr key={km} className="border-b border-gray-200">
+                            <td className="py-1 px-1 font-medium text-gray-800">
+                              {km.toLocaleString()}
+                            </td>
+                            {sortedDurations.map(duration => {
+                              const price = dataByDuration[duration][km];
+                              return (
+                                <td key={`${km}-${duration}`} className="text-center py-1 px-1">
+                                  {price ? (
+                                    <span className="text-red-600 font-medium">
+                                      {formatPrice(price)}
+                                    </span>
+                                  ) : (
+                                    <span className="text-gray-400">-</span>
+                                  )}
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
+              })()}
+            </div>
+          ) : (
             <p className="text-xs text-gray-600">
-              Dealer ID: {vehicle.dealerId}
+              No hay opciones de financiación disponibles
             </p>
           )}
         </div>

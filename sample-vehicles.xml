@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <anuncio>
+    <motorflashID>12345</motorflashID>
+    <dealerID>DEALER001</dealerID>
+    <marca><![CDATA[BMW]]></marca>
+    <modelo><![CDATA[Serie 3]]></modelo>
+    <version><![CDATA[320d xDrive Touring]]></version>
+    <combustible><![CDATA[Diésel]]></combustible>
+    <cambio><![CDATA[Automático]]></cambio>
+    <plazas>5</plazas>
+    <puertas>5</puertas>
+    <color><![CDATA[Azul Mediterráneo]]></color>
+    <potencia>190</potencia>
+    <kilometros>15000</kilometros>
+    <estado><![CDATA[Seminuevo]]></estado>
+    <disponible><![CDATA[SI]]></disponible>
+    <distintivo>C</distintivo>
+    <carroceria><![CDATA[Familiar]]></carroceria>
+    <vehiculo_en_promocion>SI</vehiculo_en_promocion>
+    <consumo>
+      <mixto><![CDATA[5.2]]></mixto>
+    </consumo>
+    <fotos>
+      <foto><![CDATA[https://via.placeholder.com/800x600/1f2937/ffffff?text=BMW+Serie+3]]></foto>
+      <foto><![CDATA[https://via.placeholder.com/800x600/374151/ffffff?text=Interior]]></foto>
+    </fotos>
+    <renting>
+      <ofertaRenting>
+        <cuota>299</cuota>
+        <meses>36</meses>
+        <km>15000</km>
+      </ofertaRenting>
+      <ofertaRenting>
+        <cuota>350</cuota>
+        <meses>48</meses>
+        <km>20000</km>
+      </ofertaRenting>
+    </renting>
+  </anuncio>
+
+  <anuncio>
+    <motorflashID>12346</motorflashID>
+    <dealerID>DEALER001</dealerID>
+    <marca><![CDATA[Audi]]></marca>
+    <modelo><![CDATA[A4]]></modelo>
+    <version><![CDATA[2.0 TDI Avant]]></version>
+    <combustible><![CDATA[Diésel]]></combustible>
+    <cambio><![CDATA[Manual]]></cambio>
+    <plazas>5</plazas>
+    <puertas>5</puertas>
+    <color><![CDATA[Negro Phantom]]></color>
+    <potencia>150</potencia>
+    <kilometros>25000</kilometros>
+    <estado><![CDATA[Seminuevo]]></estado>
+    <disponible><![CDATA[SI]]></disponible>
+    <distintivo>ECO</distintivo>
+    <carroceria><![CDATA[Familiar]]></carroceria>
+    <vehiculo_en_promocion>NO</vehiculo_en_promocion>
+    <consumo>
+      <mixto><![CDATA[4.8]]></mixto>
+    </consumo>
+    <fotos>
+      <foto><![CDATA[https://via.placeholder.com/800x600/1f2937/ffffff?text=Audi+A4]]></foto>
+    </fotos>
+    <renting>
+      <ofertaRenting>
+        <cuota>275</cuota>
+        <meses>36</meses>
+        <km>12000</km>
+      </ofertaRenting>
+    </renting>
+  </anuncio>
+
+  <anuncio>
+    <motorflashID>12347</motorflashID>
+    <dealerID>DEALER002</dealerID>
+    <marca><![CDATA[Mercedes-Benz]]></marca>
+    <modelo><![CDATA[Clase C]]></modelo>
+    <version><![CDATA[C 220d Estate]]></version>
+    <combustible><![CDATA[Diésel]]></combustible>
+    <cambio><![CDATA[Automático]]></cambio>
+    <plazas>5</plazas>
+    <puertas>5</puertas>
+    <color><![CDATA[Blanco Polar]]></color>
+    <potencia>194</potencia>
+    <kilometros>8500</kilometros>
+    <estado><![CDATA[Seminuevo]]></estado>
+    <disponible><![CDATA[SI]]></disponible>
+    <distintivo>B</distintivo>
+    <carroceria><![CDATA[Familiar]]></carroceria>
+    <vehiculo_en_promocion>NO</vehiculo_en_promocion>
+    <consumo>
+      <mixto><![CDATA[5.0]]></mixto>
+    </consumo>
+    <fotos>
+      <foto><![CDATA[https://via.placeholder.com/800x600/1f2937/ffffff?text=Mercedes+Clase+C]]></foto>
+      <foto><![CDATA[https://via.placeholder.com/800x600/374151/ffffff?text=Interior+Mercedes]]></foto>
+      <foto><![CDATA[https://via.placeholder.com/800x600/6b7280/ffffff?text=Motor]]></foto>
+    </fotos>
+    <renting>
+      <ofertaRenting>
+        <cuota>425</cuota>
+        <meses>36</meses>
+        <km>15000</km>
+      </ofertaRenting>
+      <ofertaRenting>
+        <cuota>389</cuota>
+        <meses>48</meses>
+        <km>12000</km>
+      </ofertaRenting>
+    </renting>
+  </anuncio>
+</root>
