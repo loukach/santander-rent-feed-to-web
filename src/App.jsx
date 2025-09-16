@@ -25,7 +25,12 @@ function App() {
     setError(null);
 
     try {
-      const response = await fetch('/api/motorflash/rentingSantanderConsumer/xml.php');
+      // Use different URLs for development vs production
+      const apiUrl = import.meta.env.DEV
+        ? '/api/motorflash/rentingSantanderConsumer/xml.php'
+        : 'https://cors-proxy-loukach.onrender.com/api/motorflash/rentingSantanderConsumer/xml.php';
+
+      const response = await fetch(apiUrl);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
